@@ -1,0 +1,154 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2022-08-20 08:49:19.704256",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "price_update_section",
+  "item_group",
+  "update_all_items",
+  "re_pricing_items_by_section",
+  "last_incoming_rate",
+  "last_valuation_rate",
+  "item_valuation_rate",
+  "price_list",
+  "update_all_price_lists",
+  "process_type_section",
+  "percentage",
+  "price_increase",
+  "price_reduction",
+  "amended_from"
+ ],
+ "fields": [
+  {
+   "fieldname": "price_update_section",
+   "fieldtype": "Section Break",
+   "label": "Select Item Group and Price List"
+  },
+  {
+   "fieldname": "item_group",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Item Group",
+   "mandatory_depends_on": "eval: doc.update_all_items == 0",
+   "options": "Item Group",
+   "read_only_depends_on": "eval: doc.update_all_items == 1"
+  },
+  {
+   "default": "0",
+   "fieldname": "update_all_items",
+   "fieldtype": "Check",
+   "label": "Update All Items"
+  },
+  {
+   "fieldname": "price_list",
+   "fieldtype": "Link",
+   "label": "Price List",
+   "options": "Price List",
+   "read_only_depends_on": "eval: doc.update_all_price_lists == 1"
+  },
+  {
+   "default": "0",
+   "fieldname": "update_all_price_lists",
+   "fieldtype": "Check",
+   "label": "Update All Price Lists"
+  },
+  {
+   "fieldname": "process_type_section",
+   "fieldtype": "Section Break",
+   "label": "Select Process"
+  },
+  {
+   "fieldname": "percentage",
+   "fieldtype": "Float",
+   "in_list_view": 1,
+   "label": "Percentage",
+   "reqd": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "price_increase",
+   "fieldtype": "Check",
+   "label": "Price Increase (+)",
+   "reqd": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "price_reduction",
+   "fieldtype": "Check",
+   "label": "Price Reduction (-)",
+   "reqd": 1
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Re Pricing",
+   "print_hide": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Re Pricing",
+   "print_hide": 1,
+   "read_only": 1
+  },
+  {
+   "bold": 1,
+   "fieldname": "re_pricing_items_by_section",
+   "fieldtype": "Section Break",
+   "label": "Re Pricing Items By"
+  },
+  {
+   "default": "0",
+   "fieldname": "last_incoming_rate",
+   "fieldtype": "Check",
+   "label": "Last Incoming Rate"
+  },
+  {
+   "default": "0",
+   "fieldname": "last_valuation_rate",
+   "fieldtype": "Check",
+   "label": "Last Valuation Rate"
+  },
+  {
+   "default": "0",
+   "fieldname": "item_valuation_rate",
+   "fieldtype": "Check",
+   "label": "Item Valuation Rate"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "is_submittable": 1,
+ "links": [],
+ "modified": "2022-08-23 09:10:38.281130",
+ "modified_by": "Administrator",
+ "module": "Techstation Item Control",
+ "name": "Re Pricing",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "track_changes": 1,
+ "track_seen": 1,
+ "track_views": 1
+}

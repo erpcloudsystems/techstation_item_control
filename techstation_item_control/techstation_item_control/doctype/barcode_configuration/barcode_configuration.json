@@ -1,0 +1,247 @@
+{
+ "actions": [],
+ "creation": "2022-01-07 14:47:51.157446",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "barcode_section",
+  "create_a_barcode_automatically_when_adding_a_new_item",
+  "allow_adding_more_than_one_barcode_inside_the_item",
+  "choose_a_barcode_for_printing",
+  "section_break_5",
+  "barcode_series",
+  "generate_barcode_on_barcode_type",
+  "barcode_type",
+  "length",
+  "width",
+  "height",
+  "display_value",
+  "text",
+  "font",
+  "fontoptions",
+  "text_align",
+  "text_position",
+  "font_size",
+  "background",
+  "line",
+  "texts_section",
+  "show_item_code",
+  "item_code_font_size",
+  "show_item_name",
+  "item_name_font_size",
+  "show_item_price",
+  "item_price_font_size"
+ ],
+ "fields": [
+  {
+   "default": "2",
+   "fieldname": "width",
+   "fieldtype": "Int",
+   "hidden": 1,
+   "label": "Width"
+  },
+  {
+   "default": "100",
+   "fieldname": "height",
+   "fieldtype": "Int",
+   "hidden": 1,
+   "label": "Height"
+  },
+  {
+   "default": "1",
+   "fieldname": "display_value",
+   "fieldtype": "Check",
+   "hidden": 1,
+   "label": "Display Value"
+  },
+  {
+   "description": "Override barcode value\n\n",
+   "fieldname": "text",
+   "fieldtype": "Small Text",
+   "hidden": 1,
+   "label": "Text"
+  },
+  {
+   "fieldname": "fontoptions",
+   "fieldtype": "Select",
+   "hidden": 1,
+   "label": "Font Options",
+   "options": "\nbold\nitalic"
+  },
+  {
+   "default": "monospace",
+   "description": "any default font or a font defined by a @font-face rule.",
+   "fieldname": "font",
+   "fieldtype": "Data",
+   "hidden": 1,
+   "label": "Font"
+  },
+  {
+   "fieldname": "text_align",
+   "fieldtype": "Select",
+   "hidden": 1,
+   "label": "Text Align",
+   "options": "Center\nLeft\nRight"
+  },
+  {
+   "fieldname": "text_position",
+   "fieldtype": "Select",
+   "hidden": 1,
+   "label": "Text Position",
+   "options": "Bottom\nTop"
+  },
+  {
+   "default": "20",
+   "fieldname": "font_size",
+   "fieldtype": "Int",
+   "hidden": 1,
+   "label": "Font Size"
+  },
+  {
+   "default": "#ffffff",
+   "fieldname": "background",
+   "fieldtype": "Color",
+   "hidden": 1,
+   "label": "Background"
+  },
+  {
+   "default": "#000000",
+   "fieldname": "line",
+   "fieldtype": "Color",
+   "hidden": 1,
+   "label": "Line"
+  },
+  {
+   "default": "1.3",
+   "depends_on": "show_item_code",
+   "fieldname": "item_code_font_size",
+   "fieldtype": "Float",
+   "hidden": 1,
+   "label": "Item Code Font Size"
+  },
+  {
+   "default": "1.1",
+   "depends_on": "show_item_name",
+   "fieldname": "item_name_font_size",
+   "fieldtype": "Float",
+   "hidden": 1,
+   "label": "Item Name Font Size"
+  },
+  {
+   "default": "1.1",
+   "depends_on": "show_item_price",
+   "fieldname": "item_price_font_size",
+   "fieldtype": "Float",
+   "hidden": 1,
+   "label": "Item Price Font Size"
+  },
+  {
+   "description": "(in em)",
+   "fieldname": "texts_section",
+   "fieldtype": "Section Break",
+   "hidden": 1,
+   "label": "Texts"
+  },
+  {
+   "fieldname": "barcode_section",
+   "fieldtype": "Section Break",
+   "label": "Item Barcode"
+  },
+  {
+   "default": "1",
+   "fieldname": "show_item_code",
+   "fieldtype": "Check",
+   "hidden": 1,
+   "label": "Show Item Code"
+  },
+  {
+   "default": "1",
+   "fieldname": "show_item_name",
+   "fieldtype": "Check",
+   "hidden": 1,
+   "label": "Show Item Name"
+  },
+  {
+   "default": "1",
+   "fieldname": "show_item_price",
+   "fieldtype": "Check",
+   "hidden": 1,
+   "label": "Show Item Price"
+  },
+  {
+   "default": "0",
+   "fieldname": "create_a_barcode_automatically_when_adding_a_new_item",
+   "fieldtype": "Check",
+   "label": "Create a Barcode Automatically When adding a new Item"
+  },
+  {
+   "default": "0",
+   "fieldname": "allow_adding_more_than_one_barcode_inside_the_item",
+   "fieldtype": "Check",
+   "label": "Allow Adding More than one Barcode Inside the Item"
+  },
+  {
+   "depends_on": "eval: doc.generate_barcode_on_barcode_type == 0",
+   "description": "Example: ABCD.####. then Automatic Barcode Will created based on the series.",
+   "fieldname": "barcode_series",
+   "fieldtype": "Data",
+   "label": "Item Barcode Series"
+  },
+  {
+   "depends_on": "eval: doc.generate_barcode_on_barcode_type == 1",
+   "fieldname": "barcode_type",
+   "fieldtype": "Select",
+   "label": "Item Barcode Type",
+   "options": "\nCODE 128\nEAN-13\nUPC-A"
+  },
+  {
+   "default": "0",
+   "fieldname": "choose_a_barcode_for_printing",
+   "fieldtype": "Check",
+   "label": "Choose A Barcode For Printing"
+  },
+  {
+   "bold": 1,
+   "fieldname": "section_break_5",
+   "fieldtype": "Section Break",
+   "label": "Item Barcode"
+  },
+  {
+   "default": "0",
+   "fieldname": "generate_barcode_on_barcode_type",
+   "fieldtype": "Check",
+   "label": " Generate Barcode On Barcode Type"
+  },
+  {
+   "depends_on": "eval: doc.barcode_type == \"CODE 128\" && doc.generate_barcode_on_barcode_type == 1;",
+   "fieldname": "length",
+   "fieldtype": "Int",
+   "label": "Length",
+   "mandatory_depends_on": "eval: doc.barcode_type == \"CODE 128\";"
+  }
+ ],
+ "issingle": 1,
+ "links": [],
+ "modified": "2022-09-10 16:22:19.226759",
+ "modified_by": "Administrator",
+ "module": "Techstation Item Control",
+ "name": "Barcode Configuration",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "print": 1,
+   "read": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "quick_entry": 1,
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "track_changes": 1
+}

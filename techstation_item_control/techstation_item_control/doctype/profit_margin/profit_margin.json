@@ -1,0 +1,180 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2022-08-23 13:22:27.436463",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "apply_profit_margin_by_section",
+  "purchase_invoice",
+  "purchase_order",
+  "purchase_invoice_link",
+  "purchase_order_link",
+  "price_list",
+  "update_all_price_lists",
+  "create_a_new_price_list_for_item_not_associated_with_price_list",
+  "profit_margin_section",
+  "percentage",
+  "price_increase",
+  "price_reduction",
+  "discount_section",
+  "apply_discount",
+  "mandatory_discount",
+  "max_discount",
+  "items_section",
+  "table_16",
+  "amended_from"
+ ],
+ "fields": [
+  {
+   "bold": 1,
+   "fieldname": "apply_profit_margin_by_section",
+   "fieldtype": "Section Break",
+   "label": "Apply Profit Margin By"
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Profit Margin",
+   "print_hide": 1,
+   "read_only": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "purchase_invoice",
+   "fieldtype": "Check",
+   "label": "Purchase Invoice"
+  },
+  {
+   "default": "0",
+   "fieldname": "purchase_order",
+   "fieldtype": "Check",
+   "label": "Purchase Order"
+  },
+  {
+   "depends_on": "eval: doc.purchase_invoice == 1",
+   "fieldname": "purchase_invoice_link",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Purchase Invoice",
+   "mandatory_depends_on": "eval: doc.purchase_invoice == 1",
+   "options": "Purchase Invoice"
+  },
+  {
+   "depends_on": "eval: doc.update_all_price_lists==0",
+   "fieldname": "price_list",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Price List",
+   "mandatory_depends_on": "eval: doc.update_all_price_lists==0",
+   "options": "Price List"
+  },
+  {
+   "default": "0",
+   "fieldname": "update_all_price_lists",
+   "fieldtype": "Check",
+   "label": "Update All Price Lists"
+  },
+  {
+   "bold": 1,
+   "fieldname": "profit_margin_section",
+   "fieldtype": "Section Break",
+   "label": "Profit Margin"
+  },
+  {
+   "fieldname": "percentage",
+   "fieldtype": "Float",
+   "in_list_view": 1,
+   "label": "Percentage",
+   "reqd": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "price_increase",
+   "fieldtype": "Check",
+   "label": "Price Increase (+)"
+  },
+  {
+   "default": "0",
+   "fieldname": "price_reduction",
+   "fieldtype": "Check",
+   "label": "Price Reduction (-)"
+  },
+  {
+   "bold": 1,
+   "fieldname": "discount_section",
+   "fieldtype": "Section Break",
+   "label": "Discount"
+  },
+  {
+   "fieldname": "max_discount",
+   "fieldtype": "Float",
+   "in_list_view": 1,
+   "label": "Max Discount (%)"
+  },
+  {
+   "default": "0",
+   "fieldname": "apply_discount",
+   "fieldtype": "Check",
+   "label": "Apply Discount"
+  },
+  {
+   "default": "0",
+   "fieldname": "create_a_new_price_list_for_item_not_associated_with_price_list",
+   "fieldtype": "Check",
+   "label": "Create A New Price List for Item Not Associated With Price List"
+  },
+  {
+   "fieldname": "items_section",
+   "fieldtype": "Section Break",
+   "label": "Items"
+  },
+  {
+   "fieldname": "table_16",
+   "fieldtype": "Table",
+   "options": "Profit Margin Item",
+   "read_only": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "mandatory_discount",
+   "fieldtype": "Check",
+   "label": "Mandatory Discount"
+  },
+  {
+   "depends_on": "eval: doc.purchase_order == 1",
+   "fieldname": "purchase_order_link",
+   "fieldtype": "Link",
+   "label": "Purchase Order",
+   "mandatory_depends_on": "eval: doc.purchase_order == 1",
+   "options": "Purchase Order"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "is_submittable": 1,
+ "links": [],
+ "modified": "2022-09-10 14:36:45.701524",
+ "modified_by": "Administrator",
+ "module": "Techstation Item Control",
+ "name": "Profit Margin",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC"
+}

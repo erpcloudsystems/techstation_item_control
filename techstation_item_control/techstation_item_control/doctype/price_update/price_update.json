@@ -1,0 +1,130 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2022-08-18 14:57:16.948731",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "price_update_section",
+  "item_group",
+  "update_all_items",
+  "buying",
+  "selling",
+  "price_list",
+  "update_all_price_lists",
+  "process_type_section",
+  "percentage",
+  "price_increase",
+  "price_reduction",
+  "amended_from"
+ ],
+ "fields": [
+  {
+   "fieldname": "price_update_section",
+   "fieldtype": "Section Break",
+   "label": "Select Item Group and Price List"
+  },
+  {
+   "fieldname": "item_group",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Item Group",
+   "mandatory_depends_on": "eval: doc.update_all_items == 0",
+   "options": "Item Group",
+   "read_only_depends_on": "eval: doc.update_all_items == 1"
+  },
+  {
+   "default": "0",
+   "fieldname": "buying",
+   "fieldtype": "Check",
+   "label": "Buying",
+   "reqd": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "selling",
+   "fieldtype": "Check",
+   "label": "Selling",
+   "reqd": 1
+  },
+  {
+   "fieldname": "process_type_section",
+   "fieldtype": "Section Break",
+   "label": "Select Process"
+  },
+  {
+   "default": "0",
+   "fieldname": "price_increase",
+   "fieldtype": "Check",
+   "label": "Price Increase (+)",
+   "reqd": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "price_reduction",
+   "fieldtype": "Check",
+   "label": "Price Reduction (-)",
+   "reqd": 1
+  },
+  {
+   "fieldname": "percentage",
+   "fieldtype": "Float",
+   "in_list_view": 1,
+   "label": "Percentage",
+   "reqd": 1
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Price Update",
+   "print_hide": 1,
+   "read_only": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "update_all_items",
+   "fieldtype": "Check",
+   "label": "Update All Items"
+  },
+  {
+   "default": "0",
+   "fieldname": "update_all_price_lists",
+   "fieldtype": "Check",
+   "label": "Update All Price Lists"
+  },
+  {
+   "fieldname": "price_list",
+   "fieldtype": "Link",
+   "label": "Price List",
+   "options": "Price List",
+   "read_only_depends_on": "eval: doc.update_all_price_lists == 1"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "is_submittable": 1,
+ "links": [],
+ "modified": "2022-08-19 06:44:21.724673",
+ "modified_by": "Administrator",
+ "module": "Techstation Item Control",
+ "name": "Price Update",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC"
+}
